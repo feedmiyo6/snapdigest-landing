@@ -3,44 +3,32 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="relative py-16 px-6 border-t border-white/5">
-      <div className="absolute inset-0 bg-dark-950" />
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <Link href="/" className="flex items-center gap-2.5 cursor-pointer">
+    <footer className="py-12 px-6 border-t border-slate-100">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/images/app-icon.png"
               alt="SnapDigest"
-              width={32}
-              height={32}
+              width={28}
+              height={28}
               className="rounded-lg"
             />
-            <span className="font-bold text-white">SnapDigest</span>
+            <span className="font-semibold text-slate-900">SnapDigest</span>
           </Link>
-
           <div className="flex flex-wrap justify-center gap-8 text-sm">
-            <Link
-              href="/privacy"
-              className="text-dark-400 hover:text-white transition-colors cursor-pointer"
-            >
+            <Link href="/privacy" className="text-slate-400 hover:text-slate-600 transition-colors">
               Privacy Policy
             </Link>
-            <Link
-              href="/terms"
-              className="text-dark-400 hover:text-white transition-colors cursor-pointer"
-            >
+            <Link href="/terms" className="text-slate-400 hover:text-slate-600 transition-colors">
               Terms of Service
             </Link>
-            <a
-              href="mailto:support@snapdigest.app"
-              className="text-dark-400 hover:text-white transition-colors cursor-pointer"
-            >
+            <a href="mailto:support@snapdigest.app" className="text-slate-400 hover:text-slate-600 transition-colors">
               Contact
             </a>
           </div>
-
-          <div className="text-sm text-dark-500">
-            &copy; 2026 SnapDigest. All rights reserved.
+          <div className="text-sm text-slate-300">
+            © 2026 SnapDigest
           </div>
         </div>
       </div>

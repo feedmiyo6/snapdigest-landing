@@ -18,40 +18,40 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-950/80 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20'
+          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/60 shadow-sm'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 cursor-pointer">
+      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/app-icon.png"
             alt="SnapDigest"
-            width={36}
-            height={36}
-            className="rounded-xl"
+            width={32}
+            height={32}
+            className="rounded-lg"
           />
-          <span className="font-bold text-lg text-white">SnapDigest</span>
+          <span className="font-semibold text-lg text-slate-900">SnapDigest</span>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           <Link
             href="#features"
-            className="text-dark-300 hover:text-white transition-colors text-sm font-medium hidden sm:block cursor-pointer"
+            className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium hidden sm:block"
           >
             Features
           </Link>
           <Link
             href="#how-it-works"
-            className="text-dark-300 hover:text-white transition-colors text-sm font-medium hidden sm:block cursor-pointer"
+            className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium hidden sm:block"
           >
             How It Works
           </Link>
           <a
             href="#testflight"
-            className="bg-accent-500 hover:bg-accent-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-glow cursor-pointer"
+            className="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-200"
           >
             Join Beta
           </a>

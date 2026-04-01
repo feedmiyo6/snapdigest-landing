@@ -5,46 +5,44 @@ import { ArrowRight } from 'lucide-react'
 
 export function DownloadCTA() {
   return (
-    <section id="testflight" className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute inset-0 bg-dark-950" />
-      {/* Large gradient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-accent-500/15 rounded-full blur-[150px]" />
-      <div className="absolute top-1/3 left-1/3 w-[400px] h-[300px] bg-violet-500/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[300px] bg-cyan-400/10 rounded-full blur-[100px]" />
+    <section id="testflight" className="relative py-28 px-6 overflow-hidden">
+      {/* Soft pastel background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-brand-50 to-brand-100/30" />
+      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-sky-200/20 rounded-full blur-[80px]" />
+      <div className="absolute bottom-[20%] right-[10%] w-[300px] h-[300px] bg-lavender-200/20 rounded-full blur-[80px]" />
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
+      <div className="relative z-10 max-w-2xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-5 leading-tight">
             Ready to transform
             <br />
-            <span className="gradient-text">how you read news?</span>
+            <span className="font-serif italic text-brand-500">how you read news?</span>
           </h2>
-          <p className="text-dark-300 text-lg sm:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-500 text-lg max-w-md mx-auto mb-8 leading-relaxed">
             Join our beta and be among the first to experience the future of news.
             Free, no ads, no commitment.
           </p>
 
           <motion.a
             href="#testflight"
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center justify-center gap-3 bg-white text-dark-900 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-200 shadow-glow-lg cursor-pointer"
+            className="group inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-medium text-base transition-all duration-200 hover:bg-slate-800 hover:shadow-xl"
           >
             Download on TestFlight
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </motion.a>
 
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-dark-400">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-green-400" />
-              Free during beta
-            </span>
+          <div className="mt-6 flex items-center justify-center gap-5 text-sm text-slate-400">
             <span>iOS 17+</span>
+            <span className="w-1 h-1 rounded-full bg-slate-300" />
+            <span>Free during beta</span>
+            <span className="w-1 h-1 rounded-full bg-slate-300" />
             <span>No account needed</span>
           </div>
         </motion.div>

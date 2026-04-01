@@ -1,21 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-dark-950: #030712;
+  --color-dark-900: #0a0f1e;
+  --color-dark-800: #111827;
+  --color-dark-700: #1f2937;
+  --color-dark-600: #374151;
+  --color-dark-500: #4b5563;
+  --color-dark-400: #6b7280;
+  --color-dark-300: #9ca3af;
+  --color-dark-200: #d1d5db;
+  --color-dark-100: #e5e7eb;
+  --color-dark-50: #f9fafb;
+
+  --color-accent-500: #6366f1;
+  --color-accent-400: #818cf8;
+  --color-accent-300: #a5b4fc;
+  --color-accent-600: #4f46e5;
+
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+
+  /* Keep old colors for privacy/terms pages */
+  --color-cream-50: #fefdf8;
+  --color-cream-100: #fefae0;
+  --color-cream-200: #fff8f0;
+  --color-sage-400: #6b9b63;
+  --color-sage-500: #588157;
+  --color-sage-600: #4a6d49;
+  --color-sage-700: #3d6b3f;
+  --color-terracotta-400: #d4813b;
+  --color-terracotta-500: #bc6c25;
+  --color-terracotta-600: #9a5820;
+  --color-chocolate-800: #3d2c2e;
+  --color-chocolate-900: #2a1f20;
+
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-serif: 'Newsreader', Georgia, serif;
+
+  --shadow-soft: 0 4px 20px rgba(61, 44, 46, 0.08);
+  --shadow-soft-lg: 0 8px 30px rgba(61, 44, 46, 0.12);
+  --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.3);
+  --shadow-glow-lg: 0 0 120px rgba(99, 102, 241, 0.2);
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background: linear-gradient(180deg, #fefae0 0%, #fff8f0 100%);
+  font-family: var(--font-family-sans);
+  background: var(--color-dark-950);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #22d3ee 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Noise texture overlay */
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
